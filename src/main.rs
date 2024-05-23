@@ -1,7 +1,22 @@
+use std::collections::HashMap;
+
 use eframe::egui;
 use eframe::NativeOptions;
+use requester::request::Request;
 
 fn main() -> Result<(), eframe::Error> {
+    let req = Request::new(
+        "GET".to_string(),
+        "http://localhost:8088".to_string(),
+        HashMap::new(),
+        vec![],
+    );
+
+    println!("{:?}", req);
+    draw()
+}
+
+fn draw() -> Result<(), eframe::Error> {
     env_logger::init(); // Log to stderr (if you run with `RUST_LOG=debug`).
 
     let options = NativeOptions {
