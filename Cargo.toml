@@ -12,3 +12,5 @@ env_logger = { version = "0.10", default-features = false, features = [
     "auto-color",
     "humantime",
 ] }
+anyhow = "1.0.86"
+reqwest = "0.12.4"
